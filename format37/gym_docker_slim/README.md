@@ -8,8 +8,8 @@
   
 server.py - is empty python script with infinity loop  
 
-Train script in file: bipedal_worker.py
-Finally saved model to /usr/local/gym/dataBipedalWalker-v3_DDPG-Mlp.zip  
+Train script in file: bipedal_worker.py  
+Finally saved model to /usr/local/gym/data/BipedalWalker-v3_DDPG-Mlp.zip  
 inside container, which u can see in local path data with tensorboard logs
 ### requirements
 * linux
