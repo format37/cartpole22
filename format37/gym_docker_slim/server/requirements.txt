@@ -21,3 +21,4 @@ huggingface-sb3
 stable-baselines3
 box2d-py
 tensorflow-gpu
+pyglet

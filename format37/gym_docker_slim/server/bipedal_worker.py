@@ -36,8 +36,8 @@ def get_seed():
 def train(model, seed, name_postfix):
     #print(dt.now())
     logging.info(str(dt.now())+' learn +')
-    #model.learn(total_timesteps=500000, tb_log_name="first_run_"+name_postfix)
-    model.learn(total_timesteps=5000, tb_log_name="first_run_"+name_postfix)
+    model.learn(total_timesteps=500000, tb_log_name="first_run_"+name_postfix)
+    #model.learn(total_timesteps=5000, tb_log_name="first_run_"+name_postfix)
     #print(dt.now())
     logging.info(str(dt.now())+' learn -')
     # Save the model
@@ -53,12 +53,21 @@ def train(model, seed, name_postfix):
 
 log_dir = "data/logs/"
 seed = get_seed()
-model_DDPG_MLP = DDPG(
+"""model_DDPG_MLP = DDPG(
     policy = 'MlpPolicy',
     env = env,
     tensorboard_log=log_dir,    
     verbose=0,
     seed=seed,
     device='cuda'
+)"""
+model_SAC = SAC(
+    policy = 'MlpPolicy',
+    env = env,    
+    tensorboard_log=log_dir,    
+    verbose=0,
+    seed=seed,
+    device='cuda'
 )
-train(model_DDPG_MLP, seed, 'DDPG-Mlp')
+train(model_SAC, seed, 'SAC-Mlp')
+# train(model_DDPG_MLP, seed, 'DDPG-Mlp')
