@@ -1,13 +1,16 @@
 ## gym docker image
 * Cuda
 * Pytorch
+* Tensorflow-gpu
 * Gym
 * Stable baselines v3
 * Example with training bipedal walker DDPG  
   
-Train script in file: server.py  
-Finally saved model to /usr/local/gym/BipedalWalker-v3_DDPG-Mlp.zip  
-inside container
+server.py - is empty python script with infinity loop  
+
+Train script in file: bipedal_worker.py
+Finally saved model to /usr/local/gym/dataBipedalWalker-v3_DDPG-Mlp.zip  
+inside container, which u can see in local path data with tensorboard logs
 ### requirements
 * linux
 * docker
